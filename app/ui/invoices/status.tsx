@@ -1,3 +1,4 @@
+import { FaceSmileIcon } from '@heroicons/react/20/solid';
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 
@@ -23,7 +24,12 @@ export default function InvoiceStatus({ status }: { status: string }) {
           Paid
           <CheckIcon className="ml-1 w-4 text-white" />
         </>
-      ) : null}
+      ) : (
+        <>
+          {status}
+          <FaceSmileIcon className="w-400 ml-1 text-red-500"></FaceSmileIcon>
+        </>
+      )}
     </span>
   );
 }
