@@ -1,14 +1,13 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
+import React, { ReactNode } from 'react';
 
-export default function Layout({
-  children,
-  firstpage,
-  secondpage,
-}: {
-  children: React.ReactNode;
-  firstpage: React.ReactNode;
-  secondpage: React.ReactNode;
-}) {
+interface LayoutProps {
+  children: ReactNode;
+  firstpage: ReactNode;
+  secondpage: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, firstpage, secondpage }) => {
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
       <div className="w-full flex-none md:w-64">
@@ -21,4 +20,6 @@ export default function Layout({
       </div>
     </div>
   );
-}
+};
+
+export default Layout;
