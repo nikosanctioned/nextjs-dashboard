@@ -5,6 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { AuthError } from 'next-auth';
+import { cookies } from 'next/headers';
 const FormSchema = z.object({
   id: z.string(),
   customerId: z.string({
@@ -132,4 +133,11 @@ export async function authenticate(
     }
     throw error;
   }
+}
+export async function incrementLike(likes: number) {
+  const cookie = cookies().get('authjs.callback-url')?.value;
+  cookies().set('myname', 'Nikolay Poloxov');
+  const personalCookie = cookies().get('myname')?.value;
+  console.log(personalCookie);
+  return likes + 1;
 }
