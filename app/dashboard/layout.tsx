@@ -1,5 +1,6 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
 import React, { ReactNode } from 'react';
+import VipImage from '@/app/ui/personalui/vipimage';
 
 interface LayoutProps {
   children: ReactNode;

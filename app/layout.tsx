@@ -1,6 +1,8 @@
 import '@/app/ui/global.css';
 import { inter } from './ui/fonts';
 import { Metadata } from 'next';
+import LikeButton from './ui/like-button';
+import VipImage from './ui/personalui/vipimage';
 
 export const metadata: Metadata = {
   title: {
@@ -20,6 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         Nikolay?
+        <LikeButton initialLikes={0} />
+        <VipImage />
         {children}
       </body>
     </html>
