@@ -2,6 +2,7 @@
 
 import { incrementLike } from '@/app/lib/actions';
 import { useState } from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function LikeButton({ initialLikes }: { initialLikes: number }) {
   const [likes, setLikes] = useState(initialLikes);
@@ -23,6 +24,11 @@ export default function LikeButton({ initialLikes }: { initialLikes: number }) {
         onClick={() => setLikes(likes > 0 ? likes - 1 : 0)}
       >
         Dislike
+      </button>
+      <button
+        onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'xyz' })}
+      >
+        Send event button
       </button>
     </>
   );
