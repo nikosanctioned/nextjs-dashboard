@@ -1,4 +1,5 @@
 // @ts-check
+const withMDX = require('@next/mdx')();
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -9,6 +10,7 @@ const nextConfig = {
     instrumentationHook: true,
     typedRoutes: true,
   },
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withMDX(withBundleAnalyzer(nextConfig));
