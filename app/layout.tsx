@@ -1,7 +1,7 @@
-import '@/app/ui/global.css';
+import './ui/global.css';
 import { inter } from './ui/fonts';
 import { Metadata } from 'next';
-import LikeButton from './ui/like-button';
+import LikeButton from '@ui/like-button';
 import VipImage from './ui/personalui/vipimage';
 import {
   GoogleTagManager,
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        Nikolay?
+        Nikolay: {process.env.NEXT_PUBLIC_BROWSER_ENV}
         <LikeButton initialLikes={0} />
         <VipImage />
         <GoogleTagManager gtmId="GTM-5ZKQZJH" />
