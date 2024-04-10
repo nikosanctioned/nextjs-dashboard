@@ -8,7 +8,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   experimental: {
     instrumentationHook: true,
-    // typedRoutes: true,
+    typedRoutes: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
