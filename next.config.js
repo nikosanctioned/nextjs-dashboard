@@ -9,6 +9,7 @@ const nextConfig = {
   experimental: {
     instrumentationHook: true,
     typedRoutes: true,
+    mdxRs: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
